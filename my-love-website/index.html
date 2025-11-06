@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>给最爱的你 💕</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #ffb6c1, #dda0dd);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            max-width: 500px;
+        }
+        
+        h1 {
+            color: #ff69b4;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .heart {
+            font-size: 4rem;
+            margin: 1rem 0;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin: 1rem 0;
+        }
+        
+        .message {
+            background: #fff0f5;
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid #ff69b4;
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💕 欢迎来到我们的世界</h1>
+        <div class="heart">❤️</div>
+        <p>亲爱的，这是为你准备的专属空间</p>
+        
+        <div class="message">
+            <p>每一天都因为有你而变得格外美好</p>
+            <p>你是我生命中最珍贵的礼物</p>
+            <p>爱你，是我做过最正确的决定 💖</p>
+        </div>
+        
+        <p>我们的故事正在书写中...</p>
+        <p style="margin-top: 2rem; color: #ff69b4; font-weight: bold;">刷新页面会有惊喜哦！</p>
+    </div>
+
+    <script>
+        // 随机欢迎语
+        const messages = [
+            "今天也是爱你的一天！",
+            "有你在的每一天都是最美的时光",
+            "你是我心中最柔软的那片云朵",
+            "世界很大，但我的世界有你刚好",
+            "和你在一起的每一刻都值得珍藏"
+        ];
+        
+        // 页面加载时显示随机消息
+        document.addEventListener('DOMContentLoaded', function() {
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'message';
+            messageDiv.innerHTML = `<p>${randomMessage}</p>`;
+            document.querySelector('.container').insertBefore(messageDiv, document.querySelector('.message'));
+        });
+    </script>
+</body>
+</html>
